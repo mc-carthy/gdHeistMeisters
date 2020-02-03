@@ -3,13 +3,14 @@
 [ext_resource path="res://Scripts/character.gd" type="Script" id=1]
 [ext_resource path="res://GFX/PNG/Man Red/manRed_stand.png" type="Texture" id=2]
 
+[sub_resource type="OccluderPolygon2D" id=2]
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -10.4309, -15.797, -6.12712, -20.1008, 1.40454, -20.1008, 5.92354, -15.5818, 7.21468, -7.18937, 11.5185, -0.733665, 8.07545, 6.58281, 7.21468, 15.1904, 3.34126, 19.7094, -5.48154, 20.7854, -9.35497, 17.1271, -10.2157, 8.30433, -14.0892, 0.55748, -11.5069, -5.46785, -10.2157, -15.797 )
+
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 10.0533
 height = 23.2814
-
-[sub_resource type="OccluderPolygon2D" id=2]
-cull_mode = 2
-polygon = PoolVector2Array( -6.14647, -20.4021, 1.60038, -20.4021, 5.90419, -16.0983, 6.54977, -8.35145, 11.9295, -0.819786, 7.8409, 7.35745, 6.33457, 16.6106, 2.03076, 20.9144, -6.57685, 20.6992, -10.4503, 16.8258, -11.311, 8.4334, -13.4629, 3.26883, -13.8933, -1.46535, -10.4503, -6.84512, -10.2351, -15.0223 )
 
 [node name="character" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -20,10 +21,11 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -2, 0 )
-shape = SubResource( 1 )
-
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+light_mask = 2
+position = Vector2( -2, 0 )
+shape = SubResource( 1 )
