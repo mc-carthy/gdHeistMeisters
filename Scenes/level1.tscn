@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Tilesets/floorTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Characters/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tilesets/autoTileWalls.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Characters/character.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/NPCs/Camera.tscn" type="PackedScene" id=5]
 
 [node name="level1" type="Node2D"]
 
@@ -28,3 +29,7 @@ position = Vector2( 742.762, 449.371 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.141176, 0.145098, 0.498039, 1 )
+
+[node name="Camera" parent="." instance=ExtResource( 5 )]
+position = Vector2( 500.316, 80 )
+rotation = 1.5708
